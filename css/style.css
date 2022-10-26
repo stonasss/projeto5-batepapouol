@@ -1,0 +1,48 @@
+body {
+    font-family: "Roboto", sans-serif;
+}
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    width: 375px;
+    height: 80px;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+}
+.uol-icon {
+    margin: 16px 0 11px 22px;
+}
+.people-icon {
+    margin: 18px 21px 17px;
+}
+.bottom {
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    width: 375px;
+    height: 80px;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    box-shadow: 0px -4px -6px rgba(0, 0, 0, 0.05);
+}
+.text-input>input {
+    margin: 30px 0 25px 17px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21.09px;
+}
+input {
+    border: none;
+    outline: none;
+}
+.paper-plane{
+    margin: 27px 18px 27px;
+    width: 26px;
+    height: 26px;
+
+}
