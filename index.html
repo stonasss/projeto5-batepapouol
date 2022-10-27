@@ -12,15 +12,17 @@
 
     </head>
 
-    <body>
+    <body onload="serverMessages()">
         <div class="header">
             <div>
-                <img class="uol-icon" src="./assets/logo 1.png">
+                <img onclick="onlineUsers()" class="uol-icon" src="./assets/logo 1.png">
             </div>
             <div>
                 <img class="people-icon" src="./assets/people 1.png">
             </div>
         </div>
+
+        <div class="chat"></div>
 
         <div class="bottom">
             <div class="text-input">
@@ -32,10 +34,10 @@
 
         </div>
 
-
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="/script.js"></script>
 
     </body>
 
