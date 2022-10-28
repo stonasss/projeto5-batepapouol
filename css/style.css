@@ -22,15 +22,7 @@ body {
 }
 .chat {
     margin: 106px 0px 106px 0px;
-    padding-bottom: 85px;
     overflow: hidden;
-}
-li {
-    background-color: #FFFFFF;
-    margin-bottom: 4px;
-    padding: 13px;
-    height: 100%;
-    line-height: 16px;
 }
 .message {
     background-color: #FFFFFF;
