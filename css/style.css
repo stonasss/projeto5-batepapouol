@@ -82,3 +82,8 @@ input {
     width: 26px;
     height: 26px;
 }
+button {
+    background-color: #FFFFFF;
+    color: inherit;
+    border: none;
+}

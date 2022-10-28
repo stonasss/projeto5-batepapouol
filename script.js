@@ -1,10 +1,10 @@
 let messages = []
-let name = ""
+let userName = ""
 
 function userLogin() {
-    name = prompt('Qual o seu nome?');
+    userName = prompt('Qual o seu nome?');
     
-    const data = {name: name};
+    const data = {name: userName};
     
     const promiseName = axios.post('https://mock-api.driven.com.br/api/v6/uol/participants', data);
 
@@ -19,6 +19,19 @@ function userLogin() {
 function nameUsed(){
     alert('Esse nome de usuário está indisponível');
     userLogin();
+}
+
+function sendMessage() {    
+    messageTyped = document.querySelector('input').value;
+    const data = {from: userName, to: 'Todos', text: messageTyped, type: 'message'};
+
+    const promiseMsg = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', data);
+
+    if (messageTyped = '') {
+        return false;
+    } else {
+        document.querySelector('input').value='';
+    }
 }
 
 function serverMessages() {
@@ -58,8 +71,7 @@ function loadChat() {
         `<div class ="login">
             <h1>
                 <time>(${selectedMessage.time})</time>
-                <strong>${selectedMessage.from}</strong> para
-                <strong>${selectedMessage.to}</strong>: ${selectedMessage.text}
+                <strong>${selectedMessage.from}</strong> ${selectedMessage.text}
             </h1>
         </div>`
 
@@ -75,11 +87,8 @@ function loadChat() {
             </div>`
 
             } else if (selectedMessage.type =='private_message') {
-                if (selectedMessage.to !== name) {
-                    return false
-                } else {
-
-                chatFeed.innerHTML+=
+                if (selectedMessage.to == userName) {
+                    chatFeed.innerHTML+=
                 `<div class ="private">
                     <h1>
                         <time>(${selectedMessage.time})</time>
@@ -87,10 +96,12 @@ function loadChat() {
                         <strong>${selectedMessage.to}</strong>: ${selectedMessage.text}
                     </h1>
                 </div>`
+                } else {
+                    return false;
                 }
             }
         }
-        if (chatFeed.lastElementChild !== messages.length -1) {
-            chatFeed.lastElementChild.scrollIntoView({behavior: "smooth"});
-        } 
-    }
+    if (chatFeed.lastElementChild !== messages.length -1) {
+        chatFeed.lastElementChild.scrollIntoView({behavior: "smooth"});
+    } 
+}
