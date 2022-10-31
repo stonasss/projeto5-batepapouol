@@ -1,5 +1,6 @@
 body {
     font-family: "Roboto", sans-serif;
+    margin: auto;
     width: 377px;
     background-color: #F3F3F3;
 }
@@ -8,7 +9,7 @@ body {
     top: 0;
     z-index: 1;
     display: flex;
-    width: 100%;
+    width: 377px;
     height: 80px;
     justify-content: space-between;
     background-color: #FFFFFF;
@@ -60,7 +61,7 @@ strong {
     bottom: 0;
     z-index: 1;
     display: flex;
-    width: 100%;
+    width: 377px;
     height: 80px;
     justify-content: space-between;
     background-color: #FFFFFF;
