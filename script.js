@@ -70,7 +70,7 @@ function loadChat() {  //a função que insere as mensagens da API na interface 
         if (selectedMessage.type == 'status') {  //quando o usuário entra/sai da sala
 
         chatFeed.innerHTML +=
-        `<div class ="login">
+        `<div class ="login" data-test="message">
             <h1>
                 <time>(${selectedMessage.time})</time>
                 <strong>${selectedMessage.from}</strong> ${selectedMessage.text}
@@ -80,7 +80,7 @@ function loadChat() {  //a função que insere as mensagens da API na interface 
         } else if (selectedMessage.type == 'message') {  //quando o usuário envia mensagem
 
             chatFeed.innerHTML+=
-            `<div class ="message">
+            `<div class ="message" data-test="message">
                 <h1>
                     <time>(${selectedMessage.time})</time>
                     <strong>${selectedMessage.from}</strong> para
@@ -91,7 +91,7 @@ function loadChat() {  //a função que insere as mensagens da API na interface 
             } else if (selectedMessage.type =='private_message') {  //quando o usuário envia mensagem privada
                 if (selectedMessage.to == userName) {  //caso o destinatário da mensagem colhida da API seja o próprio usuário utilizando o bate-papo, a mensagem é mostrada
                     chatFeed.innerHTML+=
-                `<div class ="private">
+                `<div class ="private" data-test="message">
                     <h1>
                         <time>(${selectedMessage.time})</time>
                         <strong>${selectedMessage.from}</strong> para
